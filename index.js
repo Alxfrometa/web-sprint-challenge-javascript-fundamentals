@@ -17,8 +17,8 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-// When 'nestedFunction' tried to 'console.log(internal);' it first looked for internal within the function. 
-// When it couldn't find it there it reached to its outer scope to find it which is where the internal variable was found.
+// When 'nestedFunction' tried to 'console.log(internal);' it first looked for internal within the function or it scope. 
+// When it couldn't find it there it reached to its outer scope to find it which is where the 'internal' variable was found.
 
 
 
@@ -26,15 +26,17 @@ myFunction();
 /* Use summation to do the following:
     1. Receive a number 
     2. Use a counter to return the summation of that number. 
-    
+  a function factorial() that accepts a parameter and uses a counter to return the factorial of that number.
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
 function summation(num) {
-  for (let i=0; i<num; i++){
-      let counter = counter + i;
+  let counter = 0;
+  for (let i=0; i<(num+1); i++){
+     counter = counter + i;
   }
-  return counter;
+ return counter;
 }
+summation(4);
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -101,7 +103,7 @@ const lowPop = zooAnimals.filter(function lowPopulationAnimals(item){
 },0);
   
 
-  Callbacks 🦁🦁🦁  
+  // Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
     * Use the higher-order function consume with 3 parameters: a, b and cb
     * The first two parameters can take any argument (we can pass any value as an argument)
@@ -204,7 +206,7 @@ class CuboidMakerTwo{
    volume(){ return this.length * this.width * this.height;};
    surfaceArea(){ return 2*( this.length * this.width + this.length * this.height + this.width * this.height ); };
  }
- 
+
  const cuboidTwo = new CuboidMakerTwo(4, 5, 5);
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
