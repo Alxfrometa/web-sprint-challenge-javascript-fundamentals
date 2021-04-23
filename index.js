@@ -26,7 +26,6 @@ myFunction();
 /* Use summation to do the following:
     1. Receive a number 
     2. Use a counter to return the summation of that number. 
-  a function factorial() that accepts a parameter and uses a counter to return the factorial of that number.
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
 function summation(num) {
@@ -63,11 +62,11 @@ const zooAnimals = [
 
   const displayNames = [];
 
-  zooAnimals.forEach(function animalNames(item){
-      displayNames.push(item.animal_name);
-      displayNames.push(item.scientific_name);
-      return displayNames;
-  });
+ zooAnimals.forEach(function animalNames(item,index){
+    displayNames.push({'animal_name': item.animal_name, 'scientific_name': item.scientific_name});
+    return displayNames;
+ });
+
 
 
 
