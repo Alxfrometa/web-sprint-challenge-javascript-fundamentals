@@ -17,7 +17,8 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+// When 'nestedFunction' tried to 'console.log(internal);' it first looked for internal within the function. 
+// When it couldn't find it there it reached to its outer scope to find it which is where the internal variable was found.
 
 
 
@@ -28,10 +29,12 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(num) {
+  for (let i=0; i<num; i++){
+      let counter = counter + i;
   }
+  return counter;
+}
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -56,10 +59,15 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
-  
+  const displayNames = [];
+
+  zooAnimals.forEach(function animalNames(item){
+      displayNames.push(item.animal_name);
+      displayNames.push(item.scientific_name);
+      return displayNames;
+  });
+
+
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -67,19 +75,19 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
-  
+ const low = zooAnimals.map(function lowerCaseNames(item){
+  return item.animal_name.toLowerCase(); 
+});
+
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+const lowPop = zooAnimals.filter(function lowPopulationAnimals(item){
+    return item.population < 5;
+  });
   
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
@@ -88,12 +96,12 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+  const totalAnimals = zooAnimals.reduce(function USApop(acc, item){
+    return acc + item.population;
+},0);
   
-  
-  // 🦁🦁🦁 Callbacks 🦁🦁🦁  
+
+  Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
     * Use the higher-order function consume with 3 parameters: a, b and cb
     * The first two parameters can take any argument (we can pass any value as an argument)
