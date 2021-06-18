@@ -16,6 +16,8 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
+// A closure occurs because 'nestedFunction' didnt have 'internal' in its function scope 
+// so it reached to the next level of its outside scope and found 'internal' there and used it
 
 
 
@@ -28,10 +30,13 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(number) {
+  let counter = 0;
+  for(let i = 0; i < number + 1; i++){
+    counter = counter + i;
   }
+  return counter;
+}
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -56,10 +61,14 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
-  
+function animalNames(arr){
+  const displayNames = [];
+  arr.forEach(function(item){
+    return displayNames.push(`name: ${item["animal_name"]}, scientific: ${item["scientific_name"]}`)
+  })
+  return displayNames;
+}
+console.log(animalNames(zooAnimals))
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -67,9 +76,13 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(arr){
+    const lowerCaseNames = arr.map(function(item){
+      return item["animal_name"].toLowerCase()
+    });
+    return lowerCaseNames;
   }
+  console.log(lowerCaseNames(zooAnimals))
   
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
@@ -77,8 +90,8 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(arr){
+    
   }
   
 
